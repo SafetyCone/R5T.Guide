@@ -10,10 +10,10 @@ namespace R5T.Guide
     /// </summary>
     public class TypedGuid : IEquatable<TypedGuid>, IComparable<TypedGuid>
     {
-        public string Value { get; }
+        public Guid Value { get; }
 
 
-        public TypedGuid(string value)
+        public TypedGuid(Guid value)
         {
             this.Value = value;
         }
@@ -45,7 +45,8 @@ namespace R5T.Guide
 
         public override string ToString()
         {
-            return this.Value;
+            var representation = this.Value.ToString();
+            return representation;
         }
 
         public bool Equals(TypedGuid other)
