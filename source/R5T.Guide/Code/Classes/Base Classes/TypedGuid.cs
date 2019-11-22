@@ -10,6 +10,20 @@ namespace R5T.Guide
     /// </summary>
     public class TypedGuid : IEquatable<TypedGuid>, IComparable<TypedGuid>
     {
+        #region Static
+
+        /// <summary>
+        /// Centralizes the methodology for getting a new Guid value.
+        /// </summary>
+        public static Guid GetNewGuid()
+        {
+            var guid = Guid.NewGuid();
+            return guid;
+        }
+
+        #endregion
+
+
         public Guid Value { get; }
 
 
