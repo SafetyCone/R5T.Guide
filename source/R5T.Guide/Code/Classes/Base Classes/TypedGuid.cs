@@ -21,6 +21,20 @@ namespace R5T.Guide
             return guid;
         }
 
+        // No implicit converstion to value type to avoid accidental client-side execution in EF Core.
+
+        public static bool operator ==(TypedGuid x, TypedGuid y)
+        {
+            var output = x.Value == y.Value;
+            return output;
+        }
+
+        public static bool operator !=(TypedGuid x, TypedGuid y)
+        {
+            var output = x.Value != y.Value;
+            return output;
+        }
+
         #endregion
 
 
