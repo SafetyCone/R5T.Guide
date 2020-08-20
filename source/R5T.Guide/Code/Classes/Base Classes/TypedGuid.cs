@@ -25,8 +25,18 @@ namespace R5T.Guide
 
         public static bool operator ==(TypedGuid x, TypedGuid y)
         {
-            var output = x.Value == y.Value;
-            return output;
+            var result = true;
+
+            if(x is object)
+            {
+                result = x.Equals(y);
+            }
+            else
+            {
+                result = y is null;
+            }
+
+            return result;
         }
 
         public static bool operator !=(TypedGuid x, TypedGuid y)
