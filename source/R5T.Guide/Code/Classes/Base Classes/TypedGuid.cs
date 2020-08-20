@@ -41,7 +41,7 @@ namespace R5T.Guide
 
         public static bool operator !=(TypedGuid x, TypedGuid y)
         {
-            var output = x.Value != y.Value;
+            var output = !(x == y);
             return output;
         }
 
