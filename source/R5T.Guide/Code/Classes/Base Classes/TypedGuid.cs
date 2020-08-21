@@ -10,6 +10,9 @@ namespace R5T.Guide
     /// </summary>
     public class TypedGuid : IEquatable<TypedGuid>, IComparable<TypedGuid>
     {
+        public const TypedGuid Empty = null;
+
+
         #region Static
 
         /// <summary>
@@ -19,6 +22,12 @@ namespace R5T.Guide
         {
             var guid = Guid.NewGuid();
             return guid;
+        }
+
+        public static bool IsEmpty(TypedGuid typedGuid)
+        {
+            var isEmpty = Object.ReferenceEquals(typedGuid, TypedGuid.Empty);
+            return isEmpty;
         }
 
         // No implicit converstion to value type to avoid accidental client-side execution in EF Core.
